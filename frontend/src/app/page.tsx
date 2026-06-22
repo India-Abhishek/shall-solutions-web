@@ -1,7 +1,13 @@
+"use client";
+
+import LanguageModal from "@/components/common/language-modal";
+import Hero from "@/components/home/hero";
+
 export default function HomePage() {
   return (
-    <main>
-      <h1>SHALL SOLUTIONS</h1>
-    </main>
+    <>
+      <LanguageModal />
+      <Hero />
+    </>
   );
 }

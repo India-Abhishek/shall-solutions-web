@@ -14,7 +14,7 @@ export const COMPANY = {
 
   email: "shallsolutionsindia@gmail.com",
 
-  owner: "Asharfee Kumar Sharma",
+  owner: "Asharfee Sharma",
 
   timings: "10:00 AM - 6:00 PM",
 

@@ -1,18 +1,102 @@
+"use client";
+
+import { useLanguage } from "@/components/common/language-provider";
+import { COMPANY } from "@/config/company";
+import { NAVIGATION } from "@/config/navigation";
+
 export default function Footer() {
+  const { language } = useLanguage();
+
   return (
-    <footer className="bg-[#0D1B4A] text-white py-8 mt-20">
-      <div className="max-w-6xl mx-auto px-4 text-center">
-        <h3 className="font-bold text-xl">
-          SHALL SOLUTIONS
-        </h3>
+    <footer className="mt-20 bg-[#0D1B4A] text-white">
+      <div className="mx-auto max-w-7xl px-6 py-14">
 
-        <p className="mt-2">
-          Smart Solutions for Better Living
-        </p>
+        <div className="grid gap-10 md:grid-cols-3">
 
-        <p className="mt-4 text-sm">
-          © {new Date().getFullYear()} SHALL SOLUTIONS
-        </p>
+          {/* Company */}
+
+          <div>
+
+            <h3 className="text-2xl font-bold">
+              {COMPANY.name}
+            </h3>
+
+            <p className="mt-3 text-slate-300">
+              {language === "hi"
+                ? "बेहतर जीवन के लिए स्मार्ट समाधान"
+                : COMPANY.tagline}
+            </p>
+
+          </div>
+
+          {/* Navigation */}
+
+          <div>
+
+            <h4 className="mb-4 text-lg font-semibold">
+              {language === "hi"
+                ? "त्वरित लिंक"
+                : "Quick Links"}
+            </h4>
+
+            <ul className="space-y-2">
+
+              {NAVIGATION.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.href}
+                    className="text-slate-300 transition hover:text-orange-400"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+
+            </ul>
+
+          </div>
+
+          {/* Contact */}
+
+          <div>
+
+            <h4 className="mb-4 text-lg font-semibold">
+              {language === "hi"
+                ? "संपर्क करें"
+                : "Contact"}
+            </h4>
+
+            <div className="space-y-2 text-slate-300">
+
+              <p>{COMPANY.phone}</p>
+
+              <p>{COMPANY.email}</p>
+
+              <p>
+                {COMPANY.address.city},{" "}
+                {COMPANY.address.state}
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div className="mt-10 border-t border-slate-700 pt-6 text-center text-sm text-slate-400">
+
+          © {COMPANY.copyright.startYear}
+          {new Date().getFullYear() !== COMPANY.copyright.startYear &&
+            ` - ${new Date().getFullYear()}`}
+
+          {" "}
+
+          {COMPANY.name}.{" "}
+
+          {COMPANY.footer.copyrightText}
+
+        </div>
+
       </div>
     </footer>
   );

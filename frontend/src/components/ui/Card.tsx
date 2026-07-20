@@ -6,7 +6,20 @@ export default function Card({
   children,
 }: Props) {
   return (
-    <div className="rounded-xl border bg-white p-6 shadow-sm hover:shadow-lg transition">
+    <div
+        className="
+            rounded-2xl
+            border
+            border-slate-200
+            bg-white
+            p-6
+            shadow-sm
+            transition-all
+            duration-300
+            hover:-translate-y-1
+            hover:shadow-xl
+        "
+        >
       {children}
     </div>
   );

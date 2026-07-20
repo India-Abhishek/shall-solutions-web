@@ -1,50 +1,61 @@
 "use client";
 
 import { useLanguage } from "@/components/common/language-provider";
-
-const services = {
-  en: [
-    "Electronics",
-    "Electrical",
-    "PVC Interiors",
-    "Furniture",
-    "Home Improvement",
-    "Construction Support",
-  ],
-  hi: [
-    "इलेक्ट्रॉनिक्स",
-    "इलेक्ट्रिकल",
-    "पीवीसी इंटीरियर",
-    "फर्नीचर",
-    "गृह सुधार",
-    "निर्माण सहायता",
-  ],
-};
+import Card from "@/components/ui/Card";
+import SectionTitle from "@/components/ui/SectionTitle";
+import { SERVICES } from "@/data/services";
 
 export default function Services() {
   const { language } = useLanguage();
 
+  const visibleServices = SERVICES
+    .filter((service) => service.active)
+    .sort((a, b) => a.displayOrder - b.displayOrder);
+
   return (
     <section
       id="services"
-      className="py-20 bg-gray-50"
+      className="bg-gray-50 py-20"
     >
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-10">
-          {language === "hi" ? "हमारी सेवाएँ" : "Our Services"}
-        </h2>
+      <div className="mx-auto max-w-7xl px-6">
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {services[language].map((service) => (
-            <div
-              key={service}
-              className="bg-white p-6 rounded-xl shadow"
-            >
-              <h3 className="font-semibold text-lg">
-                {service}
-              </h3>
-            </div>
-          ))}
+        <SectionTitle
+          title={
+            language === "hi"
+              ? "हमारी सेवाएँ"
+              : "Our Services"
+          }
+          subtitle={
+            language === "hi"
+              ? "आपके घर के लिए सम्पूर्ण समाधान"
+              : "Everything you need for your home under one roof."
+          }
+        />
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+          {visibleServices.map((service) => {
+            const Icon = service.icon;
+
+            return (
+              <Card key={service.id}>
+
+                <div className="mb-5 inline-flex rounded-xl bg-orange-100 p-3">
+                  <Icon className="h-8 w-8 text-orange-600" />
+                </div>
+
+                <h3 className="text-2xl font-semibold text-slate-800">
+                  {service.title[language]}
+                </h3>
+
+                <p className="mt-3 leading-7 text-slate-600">
+                  {service.description[language]}
+                </p>
+
+              </Card>
+            );
+          })}
+
         </div>
       </div>
     </section>

@@ -7,12 +7,24 @@ export default function Navbar() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <header className="border-b bg-white sticky top-0 z-50">
+    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b shadow-sm">
       <Container>
         <div className="flex items-center justify-between h-16">
           <div>
             <h1 className="font-bold text-xl text-[#0D1B4A]">
-              SHALL SOLUTIONS
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-[#0D1B4A]" />
+
+                <div>
+                  <h2 className="font-bold text-xl text-[#0D1B4A]">
+                    SHALL SOLUTIONS
+                  </h2>
+
+                  <p className="text-xs text-gray-500">
+                    Smart Solutions for Better Living
+                  </p>
+                </div>
+              </div>
             </h1>
           </div>
 

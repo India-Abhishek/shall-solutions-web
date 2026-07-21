@@ -1,7 +1,25 @@
+"use client";
+
+import LanguageModal from "@/components/common/language-modal";
+import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/home/Hero";
+import Services from "@/components/home/Services";
+import About from "@/components/home/About";
+import WhatsappButton from "@/components/common/WhatsappButton";
+import Footer from "@/components/layout/Footer";
+import Gallery from "@/components/home/Gallery";
+
 export default function HomePage() {
   return (
-    <main>
-      <h1>SHALL SOLUTIONS</h1>
-    </main>
+    <>
+      <LanguageModal />
+      <Navbar />
+      <Hero />
+      <Services />
+      <About />
+      <Gallery />
+      <WhatsappButton />
+      <Footer />
+    </>
   );
 }

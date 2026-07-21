@@ -8,6 +8,7 @@ import About from "@/components/home/About";
 import WhatsappButton from "@/components/common/WhatsappButton";
 import Footer from "@/components/layout/Footer";
 import Gallery from "@/components/home/Gallery";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
       <Hero />
       <Services />
       <About />
+      <WhyChooseUs />
       <Gallery />
       <WhatsappButton />
       <Footer />

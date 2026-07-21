@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -31,7 +32,7 @@ export default function Button({
     return (
       <Link
         href={href}
-        className={`${base} ${variants[variant]} ${className}`}
+        className={cn(base, variants[variant], className)}
       >
         {children}
       </Link>
@@ -39,7 +40,7 @@ export default function Button({
   }
 
   return (
-    <button className={`${base} ${variants[variant]} ${className}`}>
+    <button className={cn(base, variants[variant], className)}>
       {children}
     </button>
   );

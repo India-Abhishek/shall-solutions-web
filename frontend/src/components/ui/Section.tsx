@@ -17,7 +17,10 @@ export default function Section({
   return (
     <section
       id={id}
-      className={cn("py-24", className)}
+      className={cn(
+        "py-14 sm:py-16 md:py-20 lg:py-24",
+        className
+      )}
     >
       <div
         className={cn(

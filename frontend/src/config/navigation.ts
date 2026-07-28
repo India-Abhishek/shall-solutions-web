@@ -24,3 +24,4 @@ export const NAVIGATION = [
     href: "#contact",
   },
 ] as const;
+

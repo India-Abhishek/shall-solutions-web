@@ -13,7 +13,7 @@ export default function Hero() {
       title: COMPANY.name,
       subtitle: COMPANY.tagline,
       description: COMPANY.description,
-      location: "Bettiah, West Champaran, Bihar",
+      location: "Bettiah, West Champaran, Bihar 845438",
       whatsapp: "WhatsApp Us",
       call: "Call Now",
     },

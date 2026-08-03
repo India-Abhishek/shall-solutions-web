@@ -8,7 +8,7 @@
 
 import { request } from "./helper";
 
-import { API_ENDPOINTS } from "@/config/api";
+import { API_ENDPOINTS } from "@/config/endpoints";
 
 import { Service } from "@/types/service";
 
@@ -18,7 +18,7 @@ import { Service } from "@/types/service";
 |--------------------------------------------------------------------------
 */
 
-export async function getServices() {
+export async function getServices(): Promise<Service[]> {
   return request<Service[]>(
     API_ENDPOINTS.SERVICES
   );

@@ -19,6 +19,7 @@ export const API_CLIENT = {
   baseUrl: ENV.API_URL,
 
   defaultHeaders: {
+    Accept: "application/json",
     "Content-Type": "application/json",
   },
 } as const;

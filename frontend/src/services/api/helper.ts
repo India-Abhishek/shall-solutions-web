@@ -7,6 +7,7 @@
 */
 
 import { API_CLIENT } from "./client";
+import { AppError } from "@/lib/errors";
 
 export async function request<T>(
   endpoint: string,
@@ -23,11 +24,15 @@ export async function request<T>(
     }
   );
 
+  const data = await response.json().catch(() => null);
+
   if (!response.ok) {
-    throw new Error(
-      `API Error (${response.status})`
+    throw new AppError(
+        data?.message ??
+            `Request failed with status ${response.status}`,
+        response.status
     );
   }
 
-  return response.json();
+  return data as T;
 }

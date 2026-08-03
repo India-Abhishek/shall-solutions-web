@@ -74,7 +74,9 @@ export default function Contact() {
         subtitle="Have a question? We'd love to hear from you."
       />
 
-      <div className="grid gap-10 lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[420px_1fr]">
+
 
         {/* LEFT COLUMN */}
 
@@ -264,6 +266,18 @@ export default function Contact() {
 
         </Card>
 
+        <Card className="overflow-hidden p-0">
+            <iframe
+                title="SHALL SOLUTIONS Location"
+                src={COMPANY.mapEmbedUrl}
+                className="h-[350px] w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+            />
+        </Card>
+
+        </div>
       </div>
 
     </Section>

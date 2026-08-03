@@ -8,6 +8,7 @@ import Container from "./Container";
 import { useLanguage } from "@/components/common/language-provider";
 import { NAVIGATION } from "@/config/navigation";
 import { COMPANY } from "@/config/company";
+import Image from "next/image";
 
 export default function Navbar() {
   const { language, setLanguage } = useLanguage();
@@ -19,6 +20,16 @@ export default function Navbar() {
         <div className="flex items-center justify-between min-h-16 py-3">
           <div className="flex items-center gap-3">
             <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-[#0D1B4A] flex-shrink-0" />
+
+            {/* don't have the final logo yet, skip this step for now. Don't use a low-quality temporary logo. */}
+            {/* <Image
+              src="/images/logo.png"
+              alt="SHALL SOLUTIONS Logo"
+              width={40}
+              height={40}
+              priority
+              className="h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover flex-shrink-0"
+            /> */}
 
               <div className="leading-tight">
                 <p className="text-lg sm:text-xl font-bold text-[#0D1B4A]">
@@ -37,7 +48,14 @@ export default function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="transition hover:text-[#F97316]"
+                aria-label={`Navigate to ${item.label} section`}
+                className="
+                  transition-colors
+                  duration-300
+                  hover:text-[#F97316]
+                  focus:outline-none
+                  focus:text-[#F97316]
+                "
               >
                 {item.label}
               </a>
@@ -112,8 +130,22 @@ export default function Navbar() {
                 <li key={item.label}>
                   <a
                     href={item.href}
+                    aria-label={`Navigate to ${item.label} section`}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block rounded-md px-3 py-2 text-slate-700 transition-colors hover:bg-slate-100 hover:text-[#F97316]"
+                    className="
+                      block
+                      rounded-md
+                      px-3
+                      py-2
+                      text-slate-700
+                      transition-colors
+                      duration-300
+                      hover:bg-slate-100
+                      hover:text-[#F97316]
+                      focus:outline-none
+                      focus:bg-slate-100
+                      focus:text-[#F97316]
+                    "
                   >
                     {item.label}
                   </a>

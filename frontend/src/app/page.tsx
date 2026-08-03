@@ -11,6 +11,7 @@ import Gallery from "@/components/home/Gallery";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Contact from "@/components/home/Contact";
 import Testimonials from "@/components/home/Testimonials";
+import FAQ from "@/components/home/FAQ";
 
 export default function HomePage() {
   return (
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Gallery />
       <Contact />
       <Testimonials />
+      <FAQ />
       <WhatsappButton />
       <Footer />
     </>

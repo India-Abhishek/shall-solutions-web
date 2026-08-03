@@ -3,33 +3,44 @@ import {
   ButtonHTMLAttributes,
   ReactNode,
 } from "react";
+
 import { cn } from "@/lib/utils";
 
 /*
 |--------------------------------------------------------------------------
-| Reusable Button Component
+| Reusable Button
 |--------------------------------------------------------------------------
 | Supports:
-| - Link Button (href)
+| - Link
 | - Normal Button
-| - Future loading states
-| - Future icons
-| - Future ecommerce actions
+| - Submit Button
+| - Disabled State
+| - Future Loading State
 |--------------------------------------------------------------------------
 */
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  children: ReactNode;
-  href?: string;
-  variant?: "primary" | "secondary" | "outline";
-  className?: string;
-};
+type ButtonProps =
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    children: ReactNode;
+
+    href?: string;
+
+    variant?:
+      | "primary"
+      | "secondary"
+      | "outline";
+
+    className?: string;
+  };
 
 export default function Button({
   children,
   href,
+
   variant = "primary",
+
   className = "",
+
   ...props
 }: ButtonProps) {
   const base =
@@ -40,7 +51,7 @@ export default function Button({
       "bg-[#0D1B4A] text-white hover:bg-[#16285f]",
 
     secondary:
-      "bg-[#F97316] text-white hover:bg-[#e76812]",
+      "bg-[#F97316] text-white hover:bg-[#ea6a16]",
 
     outline:
       "border border-[#0D1B4A] text-[#0D1B4A] hover:bg-[#0D1B4A] hover:text-white",
@@ -50,7 +61,11 @@ export default function Button({
     return (
       <Link
         href={href}
-        className={cn(base, variants[variant], className)}
+        className={cn(
+          base,
+          variants[variant],
+          className
+        )}
       >
         {children}
       </Link>
@@ -60,7 +75,11 @@ export default function Button({
   return (
     <button
       {...props}
-      className={cn(base, variants[variant], className)}
+      className={cn(
+        base,
+        variants[variant],
+        className
+      )}
     >
       {children}
     </button>

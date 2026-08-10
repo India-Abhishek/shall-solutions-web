@@ -41,17 +41,20 @@ export default function Gallery() {
 
           <Card
             key={item.id}
-            className="overflow-hidden p-0"
+            className="group overflow-hidden p-0"
           >
 
-            <div className="relative h-64">
+            <div className="relative h-64 overflow-hidden">
 
-              <Image
+            <Image
                 src={item.image}
                 alt={item.title[language]}
                 fill
-                className="object-cover transition duration-500 hover:scale-105"
-              />
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
             </div>
 

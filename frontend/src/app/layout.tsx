@@ -14,10 +14,63 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+// export const metadata: Metadata = {
+//   title: "SHALL SOLUTIONS",
+//   description:
+//     "Electronics, Electrical, PVC Interiors, Furniture and Home Solutions in Bettiah, Bihar.",
+// };
+
 export const metadata: Metadata = {
-  title: "SHALL SOLUTIONS",
+  metadataBase: new URL("https://shallsolutions.in"),
+
+  title: {
+    default: "SHALL SOLUTIONS",
+    template: "%s | SHALL SOLUTIONS",
+  },
+
   description:
-    "Electronics, Electrical, PVC Interiors, Furniture and Home Solutions in Bettiah, Bihar.",
+    "SHALL SOLUTIONS offers Electronics, Electrical, PVC Interiors, Furniture and Home Improvement services in Bettiah, Bihar.",
+
+  keywords: [
+    "Electronics",
+    "Furniture",
+    "PVC Interior",
+    "Electrical",
+    "Bettiah",
+    "West Champaran",
+    "Bihar",
+    "Home Improvement",
+  ],
+
+  authors: [
+    {
+      name: "SHALL SOLUTIONS",
+    },
+  ],
+
+  creator: "SHALL SOLUTIONS",
+
+  publisher: "SHALL SOLUTIONS",
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "SHALL SOLUTIONS",
+
+    description:
+      "Trusted Home Improvement Solutions.",
+
+    url: "https://shallsolutions.in",
+
+    siteName: "SHALL SOLUTIONS",
+
+    locale: "en_IN",
+
+    type: "website",
+  },
 };
 
 export default function RootLayout({

@@ -1,26 +1,24 @@
+import { ROUTES } from "./routes";
+
 export const NAVIGATION = [
   {
     label: "Home",
-    href: "#",
+    href: ROUTES.HOME,
   },
-
   {
     label: "About",
-    href: "#about",
+    href: ROUTES.ABOUT,
   },
-
   {
     label: "Services",
-    href: "#services",
+    href: ROUTES.SERVICES,
   },
-
   {
     label: "Gallery",
-    href: "#gallery",
+    href: ROUTES.GALLERY,
   },
-
   {
     label: "Contact",
-    href: "#contact",
+    href: ROUTES.CONTACT,
   },
 ] as const;

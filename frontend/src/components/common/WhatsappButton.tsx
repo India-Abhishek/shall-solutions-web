@@ -7,6 +7,8 @@ export default function WhatsappButton() {
         fixed
         bottom-5
         right-5
+        md:bottom-6
+        md:right-6
         bg-green-600
         text-white
         px-5
@@ -14,6 +16,8 @@ export default function WhatsappButton() {
         rounded-full
         shadow-lg
         z-50
+        hover:shadow-2xl
+        hover:scale-110
       "
     >
       WhatsApp

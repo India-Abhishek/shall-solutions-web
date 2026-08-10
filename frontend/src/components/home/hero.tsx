@@ -4,6 +4,7 @@ import { useLanguage } from "@/components/common/language-provider";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import { COMPANY } from "@/config/company";
+import { ChevronDown } from "lucide-react";
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -13,7 +14,7 @@ export default function Hero() {
       title: COMPANY.name,
       subtitle: COMPANY.tagline,
       description: COMPANY.description,
-      location: "Bettiah, West Champaran, Bihar",
+      location: "Bettiah, West Champaran, Bihar 845438",
       whatsapp: "WhatsApp Us",
       call: "Call Now",
     },
@@ -32,8 +33,9 @@ export default function Hero() {
   const t = content[language];
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50">
-      <div className="mx-auto max-w-5xl px-6 text-center">
+    <section className="relative flex min-h-[80vh] items-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50">
+      {/* <div className="mx-auto max-w-5xl px-6 text-center"> */}
+      <div className="mx-auto max-w-5xl px-4 py-12 md:py-16 text-center">
 
         <div className="mb-8 flex flex-wrap justify-center gap-3">
           <Badge variant="orange">⭐ 30+ Years Experience</Badge>
@@ -43,7 +45,7 @@ export default function Hero() {
           <Badge variant="green">🛠 Customer Focused Service</Badge>
         </div>
 
-        <h1 className="text-5xl font-bold text-[#0D1B4A] md:text-7xl lg:text-8xl">
+        <h1 className="text-5xl font-bold text-[#0D1B4A] md:text-6xl lg:text-7xl">
           {t.title}
         </h1>
 
@@ -74,6 +76,16 @@ export default function Hero() {
             {t.call}
           </Button>
         </div>
+      </div>
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce">
+        <a
+          href="#services"
+          aria-label="Scroll to Services"
+          className="text-slate-500 hover:text-[#0D1B4A] transition-colors"
+        >
+          <ChevronDown size={32} />
+        </a>
       </div>
     </section>
   );

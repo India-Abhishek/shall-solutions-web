@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 type BadgeProps = {
   children: React.ReactNode;
   variant?: "orange" | "blue" | "green";
@@ -15,7 +17,10 @@ export default function Badge({
 
   return (
     <span
-      className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold ${variants[variant]}`}
+      className={cn(
+        "inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold",
+        variants[variant]
+      )}
     >
       {children}
     </span>

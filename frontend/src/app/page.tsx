@@ -8,6 +8,10 @@ import About from "@/components/home/About";
 import WhatsappButton from "@/components/common/WhatsappButton";
 import Footer from "@/components/layout/Footer";
 import Gallery from "@/components/home/Gallery";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import Contact from "@/components/home/Contact";
+import Testimonials from "@/components/home/Testimonials";
+import FAQ from "@/components/home/FAQ";
 
 export default function HomePage() {
   return (
@@ -17,7 +21,11 @@ export default function HomePage() {
       <Hero />
       <Services />
       <About />
+      <WhyChooseUs />
       <Gallery />
+      <Contact />
+      <Testimonials />
+      <FAQ />
       <WhatsappButton />
       <Footer />
     </>
